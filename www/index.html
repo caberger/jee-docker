@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="canonical" href="https://localhost/" />
+    <title>Aberger JEE Docker</title>
+    <meta name="description" content="Introduction to the docker JEE Stack">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+	<header>
+		<div id="logo"><img src="./logo.png">JEE-Docker Application Stack</div>
+		<nav>  
+			<ul>
+				<li><a href="/">Home</a>
+				<li><a href="http://localhost:8080" target="_blank">Wildfly</a>
+				<li><a href="http://localhost:9990" target="_blank">Admin</a>
+				<li><a href="http://localhost:5050" target="_blank">MySQL</a>
+			</ul>
+		</nav>
+	</header>
+	<section>
+		<strong>The JEE Docker Application stack is a local environment to develop Java Enterprise Applications.</strong>
+	</section>
+	<section id="pageContent">
+		<main role="main">
+			<article>
+				<h2>Services</h2>
+				<p>The following services are installed:
+				<br/>
+				<br>
+				<ul>
+					<li><a href="http://localhost">nginx www server</a> on port 80</li>
+					<li><a href="http://localhost:8080">wildfly application server</a> on port 8080</li>
+					<li><a href="http://localhost:9990">wildfly management console</a> on port 9990</li>
+					<li>wildfly remote debugging on port 8787</li>
+					<li><a href="http://localhost:5050">phpMyAdmin</a> on port 5050</li>
+					<li>mysql database on port 3306</li>
+				</ul>
+				</p>
+			</article>
+			<article>
+				<h2>Passwords</h2>
+				<p>The username for all services is <strong>root</strong> and the password for all services is also <strong>root</strong>.</p>
+			</article>
+			<article>
+				<h2>Source Code</h2>
+				<p>You can find more information and download the source code 
+					<a href="https://github.com/caberger/tutorials/tree/master/jee-docker" target="_blank">here</a>.</p>
+			</article>
+			<article>
+					<h2>JPA Datasource mydb</h2>
+					<p>During build a database mydb is created in the mysql server.
+						This database is added as a JNDI data source to the application server. 
+						The JNDI name is java:jboss/datasources/mydb<br/>For details see datasources in the wildfly admin console.
+					</p>
+				</article>
+			</main>
+		<aside>
+			<div>Note: You can debug the application server as a <i>Remote Java Application</i> on port 8080</div>
+			<div>Note: You can deploy your war directly to wildfly using the eclipse jboss plugin.</div>
+			<div>Note: Copy your HTML/javascript/css to the www subfolder (the folder where this file currenlty resides).
+				Then you can do rest calls directly to http://localhost/srv to reach your wildfly application server
+				in the same domain (no CORS headers required).</div>
+		</aside>
+	</section>
+	<footer>
+		<p>Thanks for the <a href="https://html5-templates.com/" target="_blank" rel="nofollow">template</a></p>
+		<address>
+			Contact: <a href="http://www.aberger.at">Aberger</a>
+		</address>
+	</footer>
+
+
+</body>
+
+</html>

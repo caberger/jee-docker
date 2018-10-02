@@ -1,0 +1,7 @@
+embed-server --std-out=echo --server-config=standalone.xml
+batch
+
+module add --name=com.mysql --resources=/usr/share/java/mysql-connector-java.jar --dependencies=javax.api,javax.transaction.api
+/subsystem=datasources/jdbc-driver=mysql:add(driver-name="mysql",driver-module-name="com.mysql",driver-class-name=com.mysql.jdbc.Driver)
+/subsystem=datasources/data-source=mydb/:add(connection-url=jdbc:mysql://mysql/mydb,driver-name=mysql,jndi-name=java:jboss/datasources/mydb,initial-pool-size=4,max-pool-size=64,min-pool-size=4,password=root,user-name=root)
+run-batch
