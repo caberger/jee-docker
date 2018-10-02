@@ -59,5 +59,14 @@ During docker build a database **mydb** is added to the mysql server.
 This database ist installed as a JNDI data source in the wildfly application server.
 The JNDI name is ```java:jboss/datasources/mydb```
 
+Reverse Proxy
+---
+
+nginx is configured as a [reverse proxy](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
+Requests to http://localhost/srv/ are forwared to http://wildfly:8080.
+
+Example: if your service can be reached at http://localhost:8080/myapp/hello you call it now with http://localhost/srv/myapp/hello.
+This frees you from any CORS headers and related problems.
+
 
 
