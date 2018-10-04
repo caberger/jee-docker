@@ -69,4 +69,9 @@ Example: if your service can be reached at http://localhost:8080/myapp/hello you
 This frees you from any CORS headers and related problems.
 
 
+Compile and Deploy applications
+---
 
+see the [example project](./jpa_rest_demo/readme.md) for an example how to compile an deploy a JEE - Application 
+to the jee-docker stack.
+ 
