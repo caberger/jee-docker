@@ -1,4 +1,4 @@
-package at.aberger.jeedocker.tutorial.model;
+package at.aberger.tutorial.jee.model;
 
 /** A Department.
  */

@@ -8,5 +8,20 @@
 			<access>FIELD</access>
 		</persistence-unit-defaults>
 	</persistence-unit-metadata>
-	<package>at.aberger.jeedocker.tutorial.model</package>
+	<package>at.aberger.tutorial.jee.model</package>
+	<entity class="Department">
+		<table name="DEPT"/>
+			<attributes>
+				<id name="number">
+					<column name="DEPTNO"/>
+					<generated-value strategy="IDENTITY"/>
+				</id>
+				<basic name="name">
+					<column name="DNAME"/>
+				</basic>
+				<basic name="location">
+					<column name="LOC"/>
+				</basic>
+			</attributes>
+	</entity>
 </entity-mappings>

@@ -11,3 +11,7 @@ To compile and deploy the war run the following command in a terminal:
 ```bash
 mvn install
 ```
+
+After that you should be able to see the JSON - REST response
+by navigating to the [department controller](http://localhost/srv/jee/app/dept). There is also a 
+[servlet](http://localhost/srv/jee/hello).
