@@ -9,7 +9,7 @@ How to build and deploy
 
 To compile and deploy the war run the following command in a terminal:
 ```bash
-mvn install
+mvn clean install
 ```
 
 After that you should be able to see the JSON - REST response

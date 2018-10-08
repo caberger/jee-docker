@@ -21,7 +21,33 @@
 				</basic>
 				<basic name="location">
 					<column name="LOC"/>
-				</basic>
+				</basic> 
 			</attributes>
 	</entity>
+		<entity class="Employee">
+		<table name="EMP"/>
+			<attributes>
+				<id name="number">
+					<column name="EMPNO"/>
+					<generated-value strategy="IDENTITY"/>
+				</id>
+				<basic name="name">
+					<column name="ENAME"/>
+				</basic>
+				<basic name="job">
+					<column name="JOB"/>
+				</basic>
+				<basic name="salary">
+					<column name="SAL"/>
+				</basic>
+				<basic name="commission">
+					<column name="COMM"/>
+				</basic>
+				<many-to-one name="department" target-entity="Department">
+					<join-column name="DEPTNO"/>
+				</many-to-one>
+
+			</attributes>
+	</entity>
+	
 </entity-mappings>

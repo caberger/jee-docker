@@ -20,7 +20,5 @@ RUN rm -rf /opt/jboss/wildfly/standalone/configuration/standalone_xml_history/cu
 RUN /opt/jboss/wildfly/bin/jboss-cli.sh --file=/opt/jboss/tmp/wildflyconf.cli && rm -rf /opt/jboss/tmp/
 
 EXPOSE 8080 9990 8787
-#CMD ["/usr/local/bin/docker-entrypoint.sh"]
-
-CMD tail -f /dev/null
+CMD ["/usr/local/bin/docker-entrypoint.sh"]
 

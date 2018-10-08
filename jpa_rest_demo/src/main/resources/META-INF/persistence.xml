@@ -4,7 +4,7 @@
 		<jta-data-source>java:jboss/datasources/mydb</jta-data-source>
 		<mapping-file>META-INF/orm.xml</mapping-file>		
 		<properties>
-			<property name="hibernate.show_sql" value="false" />
+			<property name="hibernate.show_sql" value="true" />
 		</properties>
 	</persistence-unit>
 </persistence>
