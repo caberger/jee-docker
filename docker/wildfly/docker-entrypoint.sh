@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # wait until MySQL is really available
 maxcounter=60
  

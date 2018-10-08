@@ -2,7 +2,7 @@ package at.aberger.tutorial.jee.model;
 
 /** A Department.
  */
-public class Department {
+public class Department {	
 	private short number;
 	private String name;
 	private String location;

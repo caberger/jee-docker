@@ -13,5 +13,4 @@ public class Employee {
 	public Date hireDate;
 	public String job;
 	public String name;
-	
 }
