@@ -1,0 +1,27 @@
+# use this if you want to run your own wildfly instance in the debugger.
+# run docker-compose -f debug.yml up --build to start a local mysql server and phpmyadmin.
+
+version: '2.0'
+
+services:
+  mysql:
+    build: docker/mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+  phpmyadmin:
+    build: docker/phpmyadmin
+    ports:
+      - 5050:80
+    depends_on:
+      - mysql
+    environment:
+      - PMA_HOST=mysql
+      - MYSQL_ROOT_PASSWORD=root
+volumes:
+  mysql_data:
+
+

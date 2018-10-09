@@ -5,12 +5,14 @@ USER root
 COPY docker-entrypoint.sh /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh && \
-    yum -y install bash mysql-connector-java mysql && \
+    yum -y install bash mysql-connector-java mysql dos2unix && \
     yum clean all && \
-    rm -f /var/log/yum.log
+    rm -rf /var/cache/yum /var/log/yum.log &&\
+    dos2unix /usr/local/bin/docker-entrypoint.sh
 
 USER jboss
-RUN mkdir -p /opt/jboss/tmp
+RUN  mkdir -p /opt/jboss/tmp
+
 COPY wildflyconf.cli /opt/jboss/tmp/
 
 RUN /opt/jboss/wildfly/bin/add-user.sh --user root --password root
@@ -21,4 +23,3 @@ RUN /opt/jboss/wildfly/bin/jboss-cli.sh --file=/opt/jboss/tmp/wildflyconf.cli &&
 
 EXPOSE 8080 9990 8787
 CMD ["/usr/local/bin/docker-entrypoint.sh"]
-

@@ -1,4 +1,5 @@
-# run make from the commandline to build the java binaries. This will also start docker-compose
+# JEE Aplication Stack for Development
+# run docker-compose up --build from the commandline
 
 version: '2.0'
 

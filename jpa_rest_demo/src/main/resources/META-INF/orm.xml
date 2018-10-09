@@ -46,8 +46,6 @@
 				<many-to-one name="department" target-entity="Department">
 					<join-column name="DEPTNO"/>
 				</many-to-one>
-
 			</attributes>
 	</entity>
-	
 </entity-mappings>
