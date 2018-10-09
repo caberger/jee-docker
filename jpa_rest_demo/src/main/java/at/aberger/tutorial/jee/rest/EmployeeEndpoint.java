@@ -26,8 +26,8 @@ public class EmployeeEndpoint {
 	@GET
 	public Response findAll() {
 		log.debug("findAll...");
-		return Response.status(Status.GONE).build();
-		//return Response.ok(dao.findAll()).build();
+		//return Response.status(Status.GONE).build();
+		return Response.ok(dao.findAll()).build();
 	}
 
 }

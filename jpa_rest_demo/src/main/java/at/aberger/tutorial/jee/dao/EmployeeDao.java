@@ -14,7 +14,7 @@ public class EmployeeDao {
 	EntityManager em;
 	
 	public List<Employee> findAll() {
-		return em.createQuery("select e from Employee e left join fetch e.department", Employee.class).getResultList();
+		return em.createQuery("select e from Employee e join fetch e.department", Employee.class).getResultList();
 	}
 
 }

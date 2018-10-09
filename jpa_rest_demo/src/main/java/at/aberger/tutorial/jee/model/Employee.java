@@ -1,13 +1,14 @@
 package at.aberger.tutorial.jee.model;
 
+import java.math.BigDecimal;
 import java.sql.Date;
 
 /** An employee.
  */
 public class Employee {
 	private int number;
-	private Double commission;
-	private Double salary;
+	private BigDecimal commission;
+	private BigDecimal salary;
 	private Date hireDate;
 	private String job;
 	private String name;
@@ -19,16 +20,16 @@ public class Employee {
 	public void setNumber(int number) {
 		this.number = number;
 	}
-	public Double getCommission() {
+	public BigDecimal getCommission() {
 		return commission;
 	}
-	public void setCommission(Double commission) {
+	public void setCommission(BigDecimal commission) {
 		this.commission = commission;
 	}
-	public Double getSalary() {
+	public BigDecimal getSalary() {
 		return salary;
 	}
-	public void setSalary(Double salary) {
+	public void setSalary(BigDecimal salary) {
 		this.salary = salary;
 	}
 	public Date getHireDate() {

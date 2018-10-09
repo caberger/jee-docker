@@ -12,6 +12,4 @@ To compile and deploy the war run the following command in a terminal:
 mvn clean install
 ```
 
-After that you should be able to see the JSON - REST response
-by navigating to the [department controller](http://localhost/srv/jee/app/dept). There is also a 
-[servlet](http://localhost/srv/jee/hello).
+After that you should be able to see the html - [welcome page](http://localhost/srv/jee/index.html) from the application server. http://localhost/srv/jee/index.html hast to links that return the json content from the database.
