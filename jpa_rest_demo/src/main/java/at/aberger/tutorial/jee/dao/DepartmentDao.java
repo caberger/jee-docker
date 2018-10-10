@@ -2,15 +2,16 @@ package at.aberger.tutorial.jee.dao;
 
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 
+import at.aberger.tutorial.jee.database.Database;
 import at.aberger.tutorial.jee.model.Department;
 
 @Named
 public class DepartmentDao {
-	@PersistenceContext 
+	@Inject @Database 
 	EntityManager em;
 	
 	public List<Department> findAll() {
