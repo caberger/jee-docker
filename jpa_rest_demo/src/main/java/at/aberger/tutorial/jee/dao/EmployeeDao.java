@@ -17,5 +17,4 @@ public class EmployeeDao {
 	public List<Employee> findAll() {
 		return em.createQuery("select e from Employee e join fetch e.department", Employee.class).getResultList();
 	}
-
 }

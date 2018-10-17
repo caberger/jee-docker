@@ -19,7 +19,7 @@ import at.aberger.tutorial.jee.dao.EmployeeDao;
 @Consumes({MediaType.APPLICATION_JSON})
 
 @Transactional
-public class EmployeeEndpoint {
+public class EmployeeService {
 	@Inject Logger log;
 	@Inject EmployeeDao dao;
 	
