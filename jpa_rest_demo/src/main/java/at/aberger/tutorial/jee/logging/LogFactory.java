@@ -2,7 +2,7 @@ package at.aberger.tutorial.jee.logging;
 
 import javax.enterprise.inject.spi.InjectionPoint;
 
-import org.apache.log4j.Logger;
+import java.util.logging.Logger;
 
 import javax.enterprise.inject.Produces;
 

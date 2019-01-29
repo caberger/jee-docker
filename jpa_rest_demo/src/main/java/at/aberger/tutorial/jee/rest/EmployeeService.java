@@ -1,5 +1,7 @@
 package at.aberger.tutorial.jee.rest;
 
+import java.util.logging.Logger;
+
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.Consumes;
@@ -9,8 +11,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-
-import org.apache.log4j.Logger;
 
 import at.aberger.tutorial.jee.dao.EmployeeDao;
 
@@ -25,7 +25,7 @@ public class EmployeeService {
 	
 	@GET
 	public Response findAll() {
-		log.debug("findAll...");
+		log.fine("findAll...");
 		//return Response.status(Status.GONE).build();
 		return Response.ok(dao.findAll()).build();
 	}
