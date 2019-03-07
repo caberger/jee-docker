@@ -13,3 +13,18 @@ mvn clean install
 ```
 
 After that you should be able to see the html - [welcome page](http://localhost/srv/jee/index.html) from the application server. The http://localhost/srv/jee/index.html file has to links that return some example json content read from the database.
+
+
+Code Coverage Analysis
+===
+This example also contains an example of Code Coverage Analysis. 
+Run the following command to get the analysis:
+
+```bash
+mvn clean test jacoco:report
+```
+
+After that your find the html report in the subfolder target\site\index.html
+
+
+
