@@ -1,5 +1,6 @@
 package at.aberger.tutorial.jee.rest;
 
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.inject.Inject;
@@ -9,9 +10,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
 import at.aberger.tutorial.jee.dao.EmployeeDao;
+import at.aberger.tutorial.jee.model.Employee;
 
 @Path("/emp")
 @Produces({MediaType.APPLICATION_JSON})
@@ -23,10 +24,9 @@ public class EmployeeService {
 	@Inject EmployeeDao dao;
 	
 	@GET
-	public Response findAll() {
+	public List<Employee> findAll() {
 		log.fine("findAll...");
-		//return Response.status(Status.GONE).build();
-		return Response.ok(dao.findAll()).build();
+		return dao.findAll();
 	}
 
 }

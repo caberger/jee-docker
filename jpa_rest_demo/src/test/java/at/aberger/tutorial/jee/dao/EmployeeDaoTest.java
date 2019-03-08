@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.mockito.Mockito.when;
 
-import java.util.Arrays;
 import java.util.List;
+import java.util.Arrays;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
@@ -19,39 +19,30 @@ import org.mockito.MockitoAnnotations;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
 
-import at.aberger.tutorial.jee.model.Department;
+import at.aberger.tutorial.jee.model.Employee;
 
-public class DepartmentDaoTest {
+class EmployeeDaoTest {
 	@Mock
 	EntityManager entityManager;
 	@Mock
-	TypedQuery<Department> query;
+	TypedQuery<Employee> query;
 	
 	@InjectMocks
-	DepartmentDao dao;
+	EmployeeDao dao;
 
 	@BeforeEach
 	public void setUp() throws Exception {
 		MockitoAnnotations.initMocks(this);
 	}
+
 	@Test
-	public void testFindAll() {
-		when(entityManager.createQuery(anyString(), eq(Department.class))).thenReturn(query);
-
-		final String city = "Example City";
-		final String name = "fitness";
-		short number = 1;
-		Department dept = new Department();
-		dept.setNumber(number);
-		dept.setName(name);
-		dept.setLocation(city);
-		when(query.getResultList()).thenReturn(Arrays.asList(dept));
-
-		List<Department> depts = dao.findAll();
-		assertNotNull(depts);
-		assertSame(dept, depts.get(0));
-		assertEquals(number, dept.getNumber());
-		assertEquals(name, dept.getName());
-		assertEquals(city, dept.getLocation());
+	void testFindAll() {
+		Employee emp = new Employee();
+		when(entityManager.createQuery(anyString(), eq(Employee.class))).thenReturn(query);
+		when(query.getResultList()).thenReturn(Arrays.asList(emp));
+		List<Employee> emps = dao.findAll();
+		assertNotNull(emps);
+		assertEquals(1, emps.size());
+		assertSame(emps.get(0), emp);
 	}
 }
