@@ -1,8 +1,8 @@
 package at.aberger.tutorial.jee.dao;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertSame;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.mockito.Mockito.when;
 
 import java.util.Arrays;
@@ -11,8 +11,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -28,8 +28,9 @@ public class DepartmentDaoTest {
 	@InjectMocks
 	DepartmentDao dao;
 
-	@Before
+	@BeforeEach
 	public void setUp() throws Exception {
+		System.out.println("initmocks...");
 		MockitoAnnotations.initMocks(this);
 	}
 	@Test
