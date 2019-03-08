@@ -28,5 +28,4 @@ public class EmployeeService {
 		log.fine("findAll...");
 		return dao.findAll();
 	}
-
 }

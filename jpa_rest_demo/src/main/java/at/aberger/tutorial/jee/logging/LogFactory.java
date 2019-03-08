@@ -8,7 +8,7 @@ import javax.enterprise.inject.Produces;
 
 public class LogFactory {
 	@Produces
-	Logger createLogger(InjectionPoint injectionPoint) {
+	public Logger createLogger(InjectionPoint injectionPoint) {
 		String name = injectionPoint.getMember().getDeclaringClass().getName();
 		return Logger.getLogger(name);
 	}

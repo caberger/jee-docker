@@ -6,8 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
 import java.math.BigDecimal;
-import java.util.Arrays;
 import java.sql.Date;
+import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
