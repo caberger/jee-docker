@@ -24,7 +24,7 @@ Run the following command to get the analysis:
 mvn clean test jacoco:report
 ```
 
-After that your find the html report in the subfolder target\site\index.html
+After that your find the html report in the subfolder target/site/index.html
 
 
 
