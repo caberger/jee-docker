@@ -29,7 +29,7 @@ class LogFactoryTest {
 	}
 	@Test
 	void testCreateLogger() {
-		doReturn(LogFactoryTest.class).when(member).getDeclaringClass();
+		doReturn(getClass()).when(member).getDeclaringClass();
 		when(injectionPoint.getMember()).thenReturn(member);
 		
 		Logger log = logFactory.createLogger(injectionPoint);
