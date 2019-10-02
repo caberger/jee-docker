@@ -1,0 +1,18 @@
+image: maven
+
+cache:
+  paths:
+    - jpa_rest_demo/.m2/
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2"
+
+stages:
+  - build
+
+build:
+  stage: build
+  script: pushd jpa_rest_demo && mvn clean package && ls -l target && popd
+
+  only:
+    - master
