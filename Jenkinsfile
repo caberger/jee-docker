@@ -11,7 +11,7 @@ pipeline {
         stage('Build') {
             agent {
                 docker {
-                    dir jpa_rest_demo
+                    
                     image 'maven:latest'
                     args '-v $HOME/.m2:/root/.m2'
                 }
@@ -20,4 +20,5 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+    }
 }
