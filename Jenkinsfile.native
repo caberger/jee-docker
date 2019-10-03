@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'which java && /bin/java -version && mvn -version && mvn clean package'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo "start your deploy script here"'
+            }
+        }
+    }
+}
