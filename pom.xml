@@ -52,6 +52,8 @@
 		</plugins>
 		<pluginManagement>
       		<plugins>
+			  <!--
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -78,8 +80,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
-					<!-- currently bug in eclipse, Shows Unknown error for this file <version>3.1.2</version>-->
-					<version>3.1.1</version>
+					<version>3.1.2</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -91,6 +92,7 @@
 					<artifactId>wildfly-maven-plugin</artifactId>
 					<version>2.0.1.Final</version>
 				</plugin>
+			  -->
       		</plugins>
     	</pluginManagement>
   	</build>
