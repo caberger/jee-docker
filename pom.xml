@@ -14,6 +14,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jackson.version>2.10.0</jackson.version>
 		<jupiter.version>5.4.0</jupiter.version>
+		<resteasy.version>3.9.0.Final</resteasy.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -21,6 +22,18 @@
 				<groupId>jakarta.platform</groupId>
 				<artifactId>jakarta.jakartaee-api</artifactId>
 				<version>8.0.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jaxb-provider</artifactId>
+				<version>${resteasy.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.resteasy</groupId>
+				<artifactId>resteasy-jaxrs</artifactId>
+				<version>${resteasy.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
