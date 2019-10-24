@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <!--run the following to check for latest versions: mvn versions:display-plugin-updates -->
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
 	http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>at.aberger.jee-docker</groupId>
@@ -11,16 +12,52 @@
 		<java.version>11</java.version>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jackson.version>2.9.7</jackson.version>
+		<jupiter.version>5.4.0</jupiter.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
+			<dependency>
+				<groupId>jakarta.platform</groupId>
+				<artifactId>jakarta.jakartaee-api</artifactId>
+				<version>8.0.0</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>${jupiter.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>${jupiter.version}</version>
+				<scope>test</scope>				
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-core</artifactId>
+				<version>2.25.0</version>
+				<scope>test</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 	<modules>
 		<module>jpa_rest_demo</module>
 	</modules>
-  	<build>
-	  	<plugins>
+	<build>
+		<plugins>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>versions-maven-plugin</artifactId>
@@ -34,24 +71,24 @@
 				<artifactId>maven-enforcer-plugin</artifactId>
 				<version>3.0.0-M2</version>
 				<executions>
-				<execution>
-					<id>enforce-maven</id>
-					<goals>
-					<goal>enforce</goal>
-					</goals>
-					<configuration>
-					<rules>
-						<requireMavenVersion>
-						<version>3.3.1</version>
-						</requireMavenVersion>
-					</rules>    
-					</configuration>
-				</execution>
+					<execution>
+						<id>enforce-maven</id>
+						<goals>
+							<goal>enforce</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<requireMavenVersion>
+									<version>3.3.1</version>
+								</requireMavenVersion>
+							</rules>
+						</configuration>
+					</execution>
 				</executions>
 			</plugin>
 		</plugins>
 		<pluginManagement>
-      		<plugins>
+			<plugins>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -59,7 +96,7 @@
 					<configuration>
 						<release>11</release>
 					</configuration>
-				</plugin>			  
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
@@ -68,12 +105,12 @@
 						<includes>
 							<include>**/at.aberger.keyfit.cloud.BucketCleanerTest.java</include>
 						</includes>
-					</configuration>		  
-        		</plugin>
+					</configuration>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-war-plugin</artifactId>
-				    <version>3.2.3</version>
+					<version>3.2.3</version>
 				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -90,7 +127,7 @@
 					<artifactId>wildfly-maven-plugin</artifactId>
 					<version>2.0.1.Final</version>
 				</plugin>
-      		</plugins>
-    	</pluginManagement>
-  	</build>
+			</plugins>
+		</pluginManagement>
+	</build>
 </project>
